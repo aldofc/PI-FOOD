@@ -4,16 +4,17 @@ const router = Router();
 
 router.get('/' , async (req,res) => {
     let types = [ //Obtiene un arreglo con todos los tipos de dietas existentes.
-        'gluten free',
-        'dairy free',
-        'paleolithic',
-        'lacto ovo vegetarian',
-        'primal',
-        'whole 30',
-        'fodmap friendly',
-        'ketogenic',
-        'pescatarian',
-        'vegan'
+        'Gluten Free',
+        'Ketogenic',
+        'Vegetarian',
+        'Lacto-Vegetarian',
+        'Ovo-Vegetarian',
+        'Vegan',
+        'Pescetarian',
+        'Paleo',
+        'Primal',
+        'Low FODMAP',
+        'Whole30'
     ]
     types.forEach(async (e)=>{
         await Diets.findOrCreate({

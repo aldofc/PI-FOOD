@@ -33,9 +33,9 @@ module.exports = (sequelize) => {
     type:DataTypes.ARRAY(DataTypes.STRING)
   },
 
-  dishtypes: { //platos
-    type: DataTypes.STRING
-  }
+  //dishtypes: { //platos
+   // type: DataTypes.STRING
+  //}
 
   },
 
