@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './LandingPage.css'
+import './Landing.css'
 
 const LandingPage = () => {
   return (
     <Link to='/home'>
-        <button>este boton nos lleva al home</button>
+        <button className='button'>COME ON!!</button>
     </Link>
   )
 }

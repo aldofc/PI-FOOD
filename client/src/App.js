@@ -1,15 +1,20 @@
 import './App.css';
-import LandingPage from './components/Pages/LandingPage/LandingPage';
-import Home from './components/Pages/Home/Home.jsx'
+import LandingPage from './Pages/LandingPage/LandingPage';
+import Home from './Pages/Home/Home';
+import NavBar from './components/Navbar/Navbar';
+import Create from './Pages/Create/Create';
 import { Route, Switch } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
       <Switch>
         <Route exact path='/' component={LandingPage}/>
-        <Route exact path='/home' component={Home}/>
+        <Route path='/' component={NavBar}/>
+        </Switch>
 
-      </Switch>
+        <Route exact path='/home' component={Home}/>
+        <Route exact path='/create' component={Create}/>
+        
     </div>
   );
 }
