@@ -16,7 +16,7 @@ const getApiInfo = async () => {
             return{
                 id: e.id,
                 name: e.title,
-                summary: e.summary.replaceALL(/<(“[^”]”|'[^’]’|[^'”>])*>/g, ""),
+                summary: e.summary,
                 healthscore: e.healthscore,
                 image: e.image,
                 diets: e.diets,

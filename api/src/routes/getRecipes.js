@@ -30,18 +30,15 @@ router.get('/' , async (req,res) => {
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-router.get('/:id' , async (req,res) => {
-    try{
-        const {id} = req.params;
-        const totalRecipes = await getALLRecipes();
-        if(id){
-            let idRecipe = await totalRecipes.filter((r) => r.id == id)
-            if(idRecipe.length) res.status(200).json(idRecipe)
-        }
-    }catch(error){
-        res.status(404).send(error,"We couldn't find this recipe")
+.get("/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const recipe = await getALLRecipes(id);
+      res.json(recipe);
+    } catch (error) {
+      res.status(404).json({ error });
     }
-})
+  });
 
 
 module.exports=router;
