@@ -4,13 +4,13 @@
     align-items: center;
     height: 14vh;
     box-shadow: rgb(0 0 0 / 10%) 0px 2px 3px;
-    background-color: coral;
+    background-color:goldenrod;
     position: relative;
 }
 
 .logo{
-    height: 11vh;
-    width: 8vw;
+    height: 5vh;
+    width: 4vw;
     margin-left: 1vw;
 }
 
@@ -109,7 +109,7 @@
     bottom: 0;
     opacity: 0;
     content: '';
-    background-color: coral;
+    background-color: goldenrod;
     z-index: -1;
    }
    
@@ -253,7 +253,7 @@
     bottom: 0;
     opacity: 0;
     content: '';
-    background-color: coral;
+    background-color: goldenrod;
     z-index: -1;
    }
    

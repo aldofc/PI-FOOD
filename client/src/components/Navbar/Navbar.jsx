@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Linkedin from '../../Images/linkedink1.png'
 import Instagram from '../../Images/instagram5.jpg'
 import GitHub from '../../Images/github.png'
+import Logo from '../../Images/navbarfood.jpg'
 import './Navbar.css'
 
 
@@ -17,14 +18,14 @@ const NavBar = () => {
     <div>
 
         <Link to ="/home">
-            <img src={Linkedin} alt="logo"  className='logo'/>
+            <img src={Logo} alt="logo"  className='logo'/>
         </Link>
 
     </div>
 
  
 <div className='input1'>
-    <input autoComplete='off'  placeholder="Search Dog..." type="text" name="text" class="input">
+    <input autoComplete='off'  placeholder="Search Recipe...             🔎" type="text" name="text" class="input">
         </input>
         </div>
 
@@ -38,7 +39,7 @@ const NavBar = () => {
 
         
         <Link to="/create">
-            <button className='button2'>Create Recet</button>
+            <button className='button2'>create recipe</button>
         </Link>
         </div>
 
