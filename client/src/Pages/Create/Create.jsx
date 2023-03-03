@@ -6,7 +6,7 @@ const Create = () => {
   return (
     <div>
 
-        hola soy el create
+        <h1>hola soy el create</h1>
     
     
     
