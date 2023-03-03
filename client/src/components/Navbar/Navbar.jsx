@@ -9,30 +9,58 @@ import Logo from '../../Images/navbarfood.jpg'
 import './Navbar.css'
 
 
-const NavBar = () => {
+const NavBar = ({handleChange, handleSubmit, clearSearch}) => {
   return (
 
-    <div className='navbar'>
+<div className='navbar'>
 
-        
-    <div>
+<div>
 
-        <Link to ="/home">
+<Link to ="/home">
+
             <img src={Logo} alt="logo"  className='logo'/>
-        </Link>
 
-    </div>
+        </Link>
+</div>
 
  
 <div className='input1'>
-    <input autoComplete='off'  placeholder="Search Recipe...             🔎" type="text" name="text" class="input">
-        </input>
+    <form className='search-box' onChange={handleChange}>
+    <input  className='input' autoComplete='off'  placeholder="Search Recipe..." />
+    <button  className='buttonSearch'  type='submit' onClick={handleSubmit}>🔎</button>
+    <button  className='button3'  onClick={clearSearch}>refresh</button> 
+        
+        </form>
         </div>
 
 
 
 
-       <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
         <Link to="/home">
             <button className='button1'>Home</button>
         </Link>
@@ -43,8 +71,6 @@ const NavBar = () => {
         </Link>
         </div>
 
-
-       
 
        <div className='bajar'>
        <ul class="wrapper">

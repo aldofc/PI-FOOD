@@ -1,37 +1,58 @@
 import React from 'react'
-// import { useState, useEffect } from 'react'
-// import { useDispatch, useSelector} from 'react-redux'
-// import Card from '../../components/Card/Card'
-// import {getRecipes,getRecipeById,getRecipeByName,postRecipes,getDiets} from '../../../src/App/Actions/Index'
-// import {Link} from 'react-router-dom'
+import Card from '../../components/Card/Card'
+import NavBar from '../../components/Navbar/Navbar'
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector} from 'react-redux'
+
+import {getRecipes,getRecipeById,getRecipeByName,postRecipes,getDiets} from '../../../src/App/Actions/Index'
+//import {Link} from 'react-router-dom'
 
 const Home = () => {
   
+const dispatch = useDispatch();
+const diets = useSelector((state) => state.diets)
+const [searchString, setSearchString] = useState('')
+
+
+function handleChange(e) {
+  e.preventDefault(e)
+  setSearchString(e.target.value)
+}
+
+function handleSubmit(e){
+  e.preventDefault(e)
+  dispatch(getRecipeByName(searchString))
+}
+
+function clearSearch(){
+  dispatch(getRecipes())
+  setSearchString('')
+}
+
+useEffect(() => {
+  dispatch(getRecipes())
+}, [dispatch])
+
+return(
+  <div><p>home</p>
+    <NavBar 
+    handleChange={handleChange}
+    handleSubmit={handleSubmit}
+    clearSearch={clearSearch}
     
-    // const dispatch = useDispatch()
-    // const allRecipes = useSelector((state) => state.recipes)
-    // const diets = useSelector((state) => state.diets)
+    />
 
-    // const currentRecipes = allRecipes
-
+    <Card diets={diets}/>
     
+  </div>
+)
 
-    // return(
-      
-    //   <div>
-    //     {currentRecipes?.map(e => {
-    //       return(
-    //         <Card id={e.id} name={e.name} diets={e.diets} healthscore={e.healthscore} key={e.key}/>
-    //       )
-    //     })}
-    //   </div>
-      
-    // )
 
-    return(
-      <div><h1>hola soy el home</h1></div>
-    )
-    
+
+
+
+
+
 
     
     
