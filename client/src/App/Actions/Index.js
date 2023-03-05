@@ -51,3 +51,14 @@ export function getDiets(){
         })
     }
 }
+
+
+
+
+
+export const clearFilters = diets => {
+    return{
+        type: 'CLEAR_FILTER',
+        payload: diets
+    }
+}
