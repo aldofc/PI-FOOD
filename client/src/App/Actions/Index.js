@@ -53,6 +53,11 @@ export function getDiets(){
 }
 
 
+export function Loading(){
+    return{type:'LOADER'}
+}
+
+
 
 
 

@@ -1,25 +1,34 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import './Card.css'
 
-const Card = ({image,name,diets,id,healthscore}) => {
-  return (
-    <div > 
-      <Link to={`/home/${id}`}>
-        <img src={image} alt="imagen" />
-      </Link>
+const Card = (props) => {
+  return(
+
+
+
+
+
+
 
     
+      <div className='card'> 
+          <img  className='imagen'   src={props.image} alt="imagen"  />
+      <div>
 
-    <div>
-      <h3>tipo de dieta{diets.join(',')}</h3>
-      <h3>{name}</h3>
-      <h3>healthscore{healthscore}</h3>
+      <h3>name{props.name}</h3>
+      <h5>TIPO DE DIETA: {props.diets.join(',')}</h5>
+      <h5>HEALTH SCORE:{props.healthscore}</h5>
+
     </div>
-
+    </div>
+        
     
-    </div>
-  )
+)
 }
+
+
+
+
 
 export default Card
