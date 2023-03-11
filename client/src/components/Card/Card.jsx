@@ -23,4 +23,7 @@ function Card ({image, name, diets, id, healthscore}) {
 
 
 
+
+
+
 export default Card

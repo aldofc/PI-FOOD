@@ -1,11 +1,13 @@
 import { GET_RECIPES } from "../Actions/actions"
 import { GET_RECIPE_BY_ID } from "../Actions/actions"
+import { LOADER } from "../Actions/actions"
 
 
 const initialState = {
     recipes: [],
-    recipeId: {},
-    diets: []
+    recipeByID: {},
+    diets: [],
+    loader:true,
  }
  
  function rootReducer( state = initialState , action){
@@ -18,7 +20,7 @@ const initialState = {
          case GET_RECIPE_BY_ID:
              return{
                 ...state,
-                 recipeId : action.payload
+                recipeByID : action.payload
              }
          case 'GET_RECIPE_BY_NAME':
              return{
@@ -34,8 +36,22 @@ const initialState = {
                 ...state,
                  diets: action.payload
                  }
+                 case LOADER:
+                    const loader = state.loader
+                    if ( loader === true ) {
+                        return {
+                            ...state,
+                            loader: false,
+                        }
+                    }else{
+                        return{
+                            ...state,
+                            loader: true,
+                        }
+                    }
                  default:
                      return {...state}
+
      }
  }
  

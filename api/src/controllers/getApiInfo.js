@@ -3,6 +3,7 @@ const axios =require('axios')
 const { API_KEY } = process.env;
 
 //url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`;
+// apimokeada ----    url: "https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5",
 
 const getApiInfo = async () => {
     try{

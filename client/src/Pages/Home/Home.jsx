@@ -4,14 +4,20 @@ import { useDispatch} from 'react-redux'
 import { getRecipes } from '../../Redux/Actions/actions.js'
 import { useSelector } from 'react-redux'
 import Card from '../../components/Card/Card.jsx'
+//import Loader from '../../components/Loader/Loader'
+//import { Loading } from '../../Redux/Actions/actions.js'
+import './Home.css'
 
 const Home = () => {
 
   const dispatch = useDispatch();
   const recipes = useSelector(state=>state.recipes)
+  //const loader = useSelector((state => state.loader))
 
   useEffect(()=>{
-   dispatch(getRecipes());
+   
+  dispatch(getRecipes());
+   
   },[dispatch])
 
   return (

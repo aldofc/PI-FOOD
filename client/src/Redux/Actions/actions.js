@@ -2,10 +2,13 @@ import axios from 'axios'
 
 export const GET_RECIPES = 'GET_RECIPES'
 export const GET_RECIPE_BY_ID = 'GET_RECIPE_BY_ID'
+export const GET_RECIPE_BY_NAME = 'GET_RECIPE_BY_NAME'
+export const GET_DIETS = 'GET_DIETS'
+export const LOADER = 'LOADER'
 
 export function getRecipes(){
     return async function(dispatch){
-        const response = await axios.get('https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5/recipes',{})
+        const response = await axios.get('http://localhost:3001/recipes',{})
         return dispatch({
             type: GET_RECIPES,
             payload: response.data
@@ -13,9 +16,9 @@ export function getRecipes(){
     }
 }
 
-export function getRecipeById(id){
+export function getRecipebyID(id){
     return async function(dispatch){
-        const response = await axios.get(`https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5/recipes/${id}`,{})
+        const response = await axios.get(`http://localhost:3001/recipes/${id}`,{})
         return dispatch({
             type : GET_RECIPE_BY_ID,
             payload : response.data
@@ -27,9 +30,9 @@ export function getRecipeById(id){
 export function getRecipeByName(payload){
     return async function(dispatch){
         try{
-            const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=8e22536c74bb47d3b234601667f274e4&addRecipeInformation=true/recipes/name?=' + payload)
+            const response = await axios.get('http://localhost:3001/recipes/name?=' + payload)
             return dispatch({
-                type: 'GET_RECIPE_BY_NAME',
+                type: GET_RECIPE_BY_NAME,
                 payload: response.data
             })
         } catch (error) {
@@ -40,16 +43,16 @@ export function getRecipeByName(payload){
 
 export function postRecipes(payload){
     return async function(dispatch){
-        const response = await axios.post('https://api.spoonacular.com/recipes/complexSearch?apiKey=8e22536c74bb47d3b234601667f274e4&addRecipeInformation=true/recipes', payload)
+        const response = await axios.post('http://localhost:3001/recipes', payload)
         return response
     }
 }
 
 export function getDiets(){
     return async function(dispatch){
-        const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch?apiKey=8e22536c74bb47d3b234601667f274e4&addRecipeInformation=true/diets',{})
+        const response = await axios.get('http://localhost:3001/diets',{})
         return dispatch({
-            type: 'GET_DIETS',
+            type: GET_DIETS,
             payload: response.data
         })
     }
@@ -57,7 +60,7 @@ export function getDiets(){
 
 
 export function Loading(){
-    return{type:'LOADER'}
+    return{ type:LOADER };
 }
 
 
