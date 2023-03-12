@@ -14,62 +14,47 @@ const NavBar = ({handleChange, handleSubmit, clearSearch}) => {
 
 <div className='navbar'>
 
-<div>
 
-<Link to ="/home">
-
-            <img src={Logo} alt="logo"  className='logo'/>
-
-        </Link>
-</div>
 
  
 <div className='input1'>
     <form className='search-box' onChange={handleChange}>
-    <input  className='input' autoComplete='off'  placeholder="Search Recipe..." />
-    <button  className='buttonSearch'  type='submit' onClick={handleSubmit}>🔎</button>
-    <button  className='button3'  onClick={clearSearch}>refresh</button> 
-        
-        </form>
+    
+    <div className='search'>
+    <input  className='search__input' autoComplete='off'  placeholder="Search Recipe..." /> 
+    <button  className='search__button'  type='submit' onClick={handleSubmit}>🔎</button>
+    </div>
+
+</form>
         </div>
 
 
+        <div>
+      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div>
         <Link to="/home">
             <button className='button1'>Home</button>
         </Link>
 
+        </div>
+
+
         
+<div>
+        <Link to ="/home">
+
+            <img src={Logo} alt="logo"  className='logo'/>
+
+        </Link>
+        </div>
+
+
+        <div>
         <Link to="/create">
             <button className='button2'>create recipe</button>
         </Link>
         </div>
+        
 
 
        <div className='bajar'>

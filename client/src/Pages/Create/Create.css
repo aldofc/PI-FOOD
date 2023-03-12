@@ -1,9 +1,127 @@
+.containerCreate{
+    display: flex;
+    background-image: url('https://img.freepik.com/foto-gratis/fondo-mesa-madera-vacia-mantel_93675-129997.jpg?w=2000');
+    background-size: cover;
+    background-attachment: fixed;
+    height: auto;
+    min-height: 100vh;
+    text-align: center;
+    margin: 0 auto;
+}   
 
 
+.containerCheckBox{
 
-
-.hola{
-
-    margin-top: 500px;
-
+    width: 50vw;
+    height: 22vh;
+    padding: 3vh;
 }
+
+
+
+.organizador{
+    display: flex;
+    text-transform: capitalize;
+    align-items: center;
+    justify-content: center;
+}
+
+.typeDish{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  
+
+  display: grid;
+  grid-template: 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 20%;
+  border-color:#DAA06D;
+}
+
+.form{
+    margin-left: 23vw;
+    margin-top: 3vh;
+    
+}
+
+
+.inputs{
+    text-align: end;
+   margin-right: 20vw;
+}
+
+
+  
+
+
+.form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 3em;
+    padding-left: 2.8em;
+    padding-right: 2.8em;
+    padding-bottom: 2.1em;
+    border: 2px dashed #DAA06D;
+    border-radius: 15px;
+    background-color: #EADDCA;
+    box-shadow: 0 0 0 4px #EADDCA, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+    transition: .4s ease-in-out;
+  }
+  
+  ::placeholder {
+    color: #DAA06D;
+    text-align: center;
+  }
+  
+  .form .heading {
+    
+    color: #DAA06D;
+    background-color: transparent;
+    letter-spacing: .5em;
+    text-align: center;
+    
+    padding-bottom: 2em;
+    text-shadow: inset -1px -1px 1px #DAA06D;
+  }
+  
+  .form .input {
+    outline: none;
+    padding: 0.5em;
+    border: 1px solid #DAA06D;
+    color: #DAA06D;
+    width: 14em;
+    height: 3em;
+    border-radius: 10px;
+    background-color: #EADDCA;
+    text-align: center;
+    margin-bottom: 10px;
+    
+  }
+  
+  .form .btn {
+    align-self: center;
+    margin-top: 2em;
+    
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #E5AA70;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    transition: .4s ease-in-out opacity,.1s ease-in-out active;
+    padding: 1em;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .form .btn:hover {
+    opacity: 0.8;
+  }
+  
+  .form .btn:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: none;
+  }

@@ -1,6 +1,6 @@
 const { Router } = require('express')
-const { Recipe } = require('../db')
-const { Diets } = require('../db')
+const { Recipe, Diets} = require('../db')
+
 
 const router = Router();
 
@@ -17,10 +17,10 @@ router.post('/' ,  async (req,res) => {
             
         })
 
-        const Diets = await Diets.findAll({
+        const diets = await Diets.findAll({
             where: {name:diets}
         })
-        await createRecipe.addDiets(Diets)
+        await createRecipe.addDiets(diets)
         res.status(200).send(createRecipe)
     } catch (error) {
         res.status(404).send(error)
