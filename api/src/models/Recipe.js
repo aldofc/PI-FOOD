@@ -4,9 +4,9 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Recipe', {
+    id:{
 
-  id:{
-    type: DataTypes.UUID,  //esto es para no tener conflictos con los id's de la api que no se repitan
+    type: DataTypes.UUID,  
     defaultValue: DataTypes.UUIDV4,
     primaryKey: true
     
@@ -17,29 +17,30 @@ module.exports = (sequelize) => {
     },
 
   summary: { //resumen
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
   healthscore: {//puntuacion
     type: DataTypes.INTEGER,
+    allowNull: false,
   },
 
   img: { //imagen
     type: DataTypes.STRING,
-    allowNull:false//'https://img.freepik.com/foto-gratis/cuaderno-receta-tomate-farfalle-ajo-cebolla-mortero-pimienta-vista-superior-copia-espacio_141793-3458.jpg'
+    allowNull:false,
   },
 
   steps: { //pasos
-    type:DataTypes.ARRAY(DataTypes.STRING)
+    type:DataTypes.ARRAY(DataTypes.STRING),
+    allowNull:false
   },
 
-  //dishtypes: { //platos
-   // type: DataTypes.STRING
-  //}
+  // dishtypes: { //platos
+  //  type: DataTypes.STRING
+  // }
 
   },
-
-  {
+{
       timestamps:false
   });
 };

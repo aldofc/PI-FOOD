@@ -14,7 +14,7 @@ function Create() {
   const diets = useSelector(state => state.diets)
   
 
- // const [dataSteps, setDataSteps] = useState("")
+ const [dataSteps, setDataSteps] = useState("")
   const [errors, setErrors] = useState({
       name:'',
       summary:'',
@@ -108,6 +108,25 @@ function handleSubmit(e) {
   }
  }
 
+ function handlerAddSteps(e) {
+  e.preventDefault()
+  setInput({
+    ...input,
+    steps: [...input.steps,dataSteps]
+  })
+  setDataSteps('')
+ }
+
+
+ function handlerDeleteAll(e){
+  e.preventDefault()
+  setInput({
+    ...input,
+    steps: []
+  })
+  setDataSteps('')
+ }
+
 
  
 
@@ -166,6 +185,19 @@ return (
         </fieldset>
       </div>
 
+      <div>
+        <legend className='heading'>steps:</legend>
+        <textarea  value={dataSteps} name="name"  onChange={e => setDataSteps(e.target.value)}  cols="80" rows="8"></textarea>
+        <div>
+          <input className='btn2' type="submit" name='add'  value='add step'  onClick={e => handlerAddSteps(e)}/>
+          <input className='btn2' type="submit" name='delete'  value='deleteAll'  onClick={e => handlerDeleteAll(e)}/>
+        </div>
+      </div>
+
+
+<div className='containerSteps'>
+  <ol>{input.steps.map(e => {return(<><li>{e}</li></>)})}</ol>
+</div>
 
 
 

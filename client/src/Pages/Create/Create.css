@@ -137,3 +137,44 @@
     padding-bottom: 2em;
     text-shadow: inset -1px -1px 1px #DAA06D;
   }
+
+
+   .btn2 {
+    align-self: center;
+    margin-top: 2em;
+    
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #E5AA70;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    transition: .4s ease-in-out opacity,.1s ease-in-out active;
+    padding: 1em;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+    margin: 1vw;
+  }
+  
+   .btn2:hover {
+    opacity: 0.8;
+  }
+  
+  .btn2:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: none;
+  }
+  
+
+  .containerSteps{
+    width: 30vw;
+    align-items: center;
+    justify-items: center;
+    list-style-position: inside;
+    font-display: inherit;
+    background-color: white;
+    margin-left: 11.5vw;
+  }
+
+
+  
