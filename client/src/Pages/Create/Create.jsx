@@ -123,24 +123,24 @@ return (
     <p className='heading'>CREATE RECIPE</p>
      <div className='inputs'>
       <div>
-      <label className='heading' >Name :</label>
+      <label className='heading2' >Name :</label>
       <input className='input'  autoComplete='off' type="text" value={input.name} name='name' onChange={handleChange}/>
       </div>
             {errors.name && (<p>{errors.name}</p>)}
 
       <div> 
-      <label className='heading'>Summary : </label>
+      <label className='heading2'>Summary : </label>
       <input className='input'  autoComplete='off' type="text"  value={input.summary} name="summary" onChange={handleChange}/>
       </div>
             {errors.summary && (<p>{errors.summary}</p>)}
 
       <div> 
-      <label className='heading'>dish type : </label>
+      <label className='heading2'>dish type : </label>
       <input className='input'  autoComplete='off' type="text"  value={input.dishtypes} name="dishtypes" onChange={handleChange}/>
       </div>
 
       <div>
-      <label className='heading'>Health Score : </label>
+      <label className='heading2'>Health Score : </label>
       <input  className='input' autoComplete='off'  type="number" value={input.healthscore} name="healthscore" onChange={handleChange}/>
       </div>
             {errors.healthscore && (<p>{errors.healthscore}</p>)} 

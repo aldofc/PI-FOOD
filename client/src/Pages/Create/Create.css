@@ -78,7 +78,7 @@
   
   .form .heading {
     
-    color: #DAA06D;
+    color: black;
     background-color: transparent;
     letter-spacing: .5em;
     text-align: center;
@@ -124,4 +124,16 @@
   .form .btn:active {
     transform: translateX(0.1em) translateY(0.1em);
     box-shadow: none;
+  }
+
+
+  .heading2 {
+    
+    color: black;
+    background-color: transparent;
+    letter-spacing: .5em;
+    text-align: center;
+    
+    padding-bottom: 2em;
+    text-shadow: inset -1px -1px 1px #DAA06D;
   }

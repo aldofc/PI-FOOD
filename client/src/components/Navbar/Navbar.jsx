@@ -1,11 +1,11 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom'
-//import logo from '../Images/logo.jpg'
+
 import Linkedin from '../../Images/linkedink1.png'
 import Instagram from '../../Images/instagram5.jpg'
 import GitHub from '../../Images/github.png'
-import Logo from '../../Images/navbarfood.jpg'
+
 import './Navbar.css'
 
 
@@ -33,25 +33,18 @@ const NavBar = ({handleChange, handleSubmit, clearSearch}) => {
       
 
         <Link to="/home">
-            <button className='button1'>Home</button>
+            <button className='buttonHome'>Home</button>
         </Link>
 
         </div>
 
 
         
-<div>
-        <Link to ="/home">
-
-            <img src={Logo} alt="logo"  className='logo'/>
-
-        </Link>
-        </div>
 
 
         <div>
         <Link to="/create">
-            <button className='button2'>create recipe</button>
+            <button className='buttonCreate'>create recipe</button>
         </Link>
         </div>
         
