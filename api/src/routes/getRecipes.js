@@ -8,11 +8,11 @@ const router = Router();
 router.get('/' , async (req,res) => {
     const {name} =req.query;
 
-    let info = await getALLRecipes();
+    let allInfo = await getALLRecipes();
 
     if(name){
         try{
-            let filteredRecipe = await info.filter((e) => 
+            let filteredRecipe = await allInfo.filter((e) => 
             e.name.toLowerCase().includes(name.toLowerCase())
 
             );
@@ -23,22 +23,38 @@ router.get('/' , async (req,res) => {
             return res.status(400).send('gone wrong');
         }
     } else {
-        res.send(info)
+        res.send(allInfo)
     }
 })
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// .get("/:id", async (req, res) => {
+//     try {
+//       const { id } = req.params;
+//       const recipe = await getALLRecipes(id);
+//       res.json(recipe);
+//     } catch (error) {
+//       res.status(404).json({ error });
+//     }
+//   });
 
-.get("/:id", async (req, res) => {
-    try {
-      const { id } = req.params;
-      const recipe = await getALLRecipes(id);
-      res.json(recipe);
-    } catch (error) {
-      res.status(404).json({ error });
+
+
+
+
+router.get('/:id' , async (req,res) => {
+  try{
+    const{id}=req.params;
+    const recipesTotal = await getALLRecipes()
+    if(id){
+      let recipeId = await recipesTotal.filter((r) => r.id == id)
+       res.status(200).json(recipeId)
     }
-  });
+  }catch(error){
+    res.status(404).json({error})
+  }
+})
 
 
 module.exports=router;

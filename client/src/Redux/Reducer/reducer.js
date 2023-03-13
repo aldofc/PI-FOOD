@@ -17,11 +17,11 @@ const initialState = {
                 ...state,
                 recipes: action.payload
              }
-         case GET_RECIPE_BY_ID:
+         case GET_RECIPE_BY_ID: 
              return{
                 ...state,
-                recipeByID: action.payload
-             }
+                recipeByID: action.payload ,
+                }
          case 'GET_RECIPE_BY_NAME':
              return{
                 ...state,

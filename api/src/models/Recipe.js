@@ -27,7 +27,7 @@ module.exports = (sequelize) => {
 
   image: { //imagen
     type: DataTypes.STRING,
-    defaultValue :  'https://thumbs.dreamstime.com/b/el-dise%C3%B1o-de-la-pizarra-con-el-utensilio-de-la-tabla-de-cortar-y-de-la-cocina-y-la-receta-enumeran-56598022.jpg',
+    allowNull : false
   },
 
   steps: { //pasos
