@@ -5,6 +5,7 @@ export const GET_RECIPE_BY_ID = 'GET_RECIPE_BY_ID'
 export const GET_RECIPE_BY_NAME = 'GET_RECIPE_BY_NAME'
 export const GET_DIETS = 'GET_DIETS'
 export const LOADER = 'LOADER'
+export const FILTER_BY_DIETS = 'FILTER_BY_DIETS'
 
 export function getRecipes(){
     return async function(dispatch){
@@ -62,6 +63,14 @@ export function getDiets(){
 
 export function Loading(){
     return{ type:LOADER };
+}
+
+
+export function filterByDiets(payload){
+    return({
+        type: FILTER_BY_DIETS,
+        payload
+    })
 }
 
 

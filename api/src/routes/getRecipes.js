@@ -9,6 +9,7 @@ router.get('/' , async (req,res) => {
     const {name} =req.query;
 
     let allInfo = await getALLRecipes();
+    //console.log(allInfo)
 
     if(name){
         try{
@@ -24,6 +25,7 @@ router.get('/' , async (req,res) => {
         }
     } else {
         res.send(allInfo)
+        
     }
 })
 

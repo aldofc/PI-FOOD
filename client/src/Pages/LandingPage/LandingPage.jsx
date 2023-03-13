@@ -8,80 +8,48 @@ import Landing3 from '../../Images/landin3.jpg'
 
 const LandingPage = () => {
   return (
+      <div className='containerLanding'>
+      <div className='container-left'>
 
+       <p className='letra-grande'>GOOD FOOD</p>
+       <p className='letra-grande'>GOOD LIFE</p>
+       <p className='letra-pequeña'>DELICIOUS FOOD FOR YOU</p>
 
-
-    
-
-    
-
-    <div className='containerLanding'>
-
-    
-    
-    <div className='container-left'>
-
-    
-
-
-  <p className='letra-grande'>GOOD FOOD</p>
-  <p className='letra-grande'>GOOD LIFE</p>
-<p className='letra-pequeña'>DELICIOUS FOOD FOR YOU</p>
-
-<Link to='/home'>
+           <Link to='/home'>
         <button className='button2'>COME ON!!</button>
-    </Link>
+           </Link>
     
-    </div>
+       </div>
 
+         <div className='container-right'>
+         <img src={Landing3} alt="landing"  width='800vw'  height='700vh'/>
+      </div>
 
+      <div className='container-redes-sociales'>
 
-<div className='container-right'>
-  <img src={Landing3} alt="landing"  width='800vw'  height='700vh'/>
-</div>
-
-
-
-<div className='container-redes-sociales'>
-
-       <ul class="wrapper2">
-    <li class="icon facebook2">
+      <ul class="wrapper2">
+         <li class="icon facebook2">
         <span class="tooltip2">Linkedin</span>
         <span><i class="fab fa-facebook-f2"></i></span>
         <a href="https://www.linkedin.com/in/aldo-flores-carreon-20bb66256"><img className='logos' src={Linkedin} alt="linkedin"  /></a>
-    </li>
+        </li>
 
-    <li class="icon twitter2">
+      <li class="icon twitter2">
         <span class="tooltip2">GitHub</span>
         <span>  <i class="fab fa-twitter2"> </i></span>
         <a href="https://github.com/aldofc"><img className='logos' src={GitHub} alt="git"  /></a>
-    </li>
+      </li>
 
-<li class="icon instagram2">
+      <li class="icon instagram2">
         <span class="tooltip2">Instagram</span>
         <span><i class="fab fa-instagram2"></i></span>
         <a href="https://www.instagram.com/aldo.fc1/"><img className='logos' src={Instagram} alt="instagram" /></a>
-    </li>
-</ul>
+      </li>
+      </ul>
 
 </div>
-
-
-
-
-
-
-
-      </div>
- 
-
-    
-
-
-
-
-
-  )
+</div>
+)
 }
 
 export default LandingPage

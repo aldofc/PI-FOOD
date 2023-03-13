@@ -1,6 +1,7 @@
 import { GET_RECIPES } from "../Actions/actions"
 import { GET_RECIPE_BY_ID } from "../Actions/actions"
 import { LOADER } from "../Actions/actions"
+import { FILTER_BY_DIETS } from "../Actions/actions"
 
 
 const initialState = {
@@ -17,6 +18,29 @@ const initialState = {
                 ...state,
                 recipes: action.payload
              }
+            case FILTER_BY_DIETS:
+                const result = state.recipes;
+                if(action.payload === 'all'){
+                    return{
+                        ...state,
+                        recipes: result,
+                    }
+                }else{
+                    const fil = result.filter(r => r.diets?.some((d) => d===action.payload))
+                    return{
+                        ...state,
+                        recipes: fil
+                    }
+                }
+
+
+
+
+
+
+
+
+
          case GET_RECIPE_BY_ID: 
              return{
                 ...state,
