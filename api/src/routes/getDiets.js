@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { Diets } = require('../db');
+const { TypeDiet } = require('../db');
 const router = Router();
 
 router.get('/' , async (req,res) => {
@@ -17,11 +17,11 @@ router.get('/' , async (req,res) => {
         'Whole30'
     ]
     types.forEach(async (e)=>{
-        await Diets.findOrCreate({
+        await TypeDiet.findOrCreate({
             where:{name:e}
         })
     })
-    let results = await Diets.findAll()
+    let results = await TypeDiet.findAll()
         return res.send(results)
     
 })

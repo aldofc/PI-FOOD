@@ -56,6 +56,8 @@ function validate(input){
     errors.summary='summary required'
   }if(input.healthscore > 100 || input.healthscore < 0){
     errors.healthscore = 'the health score must be between 0 and 100'
+  }if(input.dishtypes === ''){
+    errors.dishtypes='dish type required'
   }
   return errors
 }
@@ -157,6 +159,7 @@ return (
       <label className='heading2'>dish type : </label>
       <input className='input'  autoComplete='off' type="text"  value={input.dishtypes} name="dishtypes" onChange={handleChange}/>
       </div>
+            {errors.dishtypes && (<p>{errors.dishtypes}</p>)}
 
       <div>
       <label className='heading2'>Health Score : </label>

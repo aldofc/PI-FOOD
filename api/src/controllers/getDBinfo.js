@@ -1,12 +1,12 @@
 require('dotenv').config;
 const axios = require('axios')
-const { Recipe , Diets } = require('../db')
+const { Recipe , TypeDiet } = require('../db')
 
 const getDBinfo = async () => {
     try{
         const recipes = await Recipe.findAll({
             include: {
-                model: Diets,
+                model: TypeDiet,
                 attributes: ['name'],
                 through: {
                     attributes: []
@@ -22,7 +22,7 @@ const getDBinfo = async () => {
             image: e.image,
             steps: e.steps,
             dishtypes: e.dishtypes,
-            diets: e.typeDiets.map(e=>e.name)
+            diets: e.TypeDiets.map(e=>e.name)
         }
     })
 }catch(error){

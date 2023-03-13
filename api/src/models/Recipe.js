@@ -20,24 +20,24 @@ module.exports = (sequelize) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-  healthscore: {//puntuacion
+    healthscore: {//puntuacion
     type: DataTypes.INTEGER,
     allowNull: false,
   },
 
-  img: { //imagen
+  image: { //imagen
     type: DataTypes.STRING,
-    allowNull:false,
+    defaultValue :  'https://thumbs.dreamstime.com/b/el-dise%C3%B1o-de-la-pizarra-con-el-utensilio-de-la-tabla-de-cortar-y-de-la-cocina-y-la-receta-enumeran-56598022.jpg',
   },
 
   steps: { //pasos
     type:DataTypes.ARRAY(DataTypes.STRING),
-    allowNull:false
+    allowNull: false 
   },
 
-  // dishtypes: { //platos
-  //  type: DataTypes.STRING
-  // }
+  dishtypes: { //platos
+   type: DataTypes.STRING
+  }
 
   },
 {
