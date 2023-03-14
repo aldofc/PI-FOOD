@@ -8,9 +8,9 @@ const { API_KEY } = process.env;
 const getApiInfo = async () => {
     try{
         const apiUrl = await axios({
-            method: 'get',
+            
             url: "https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5",
-            headers: {"Accept-Encoding": "null"}
+           
         })
 
         const apiInfo = await apiUrl.data.results?.map((e) => {

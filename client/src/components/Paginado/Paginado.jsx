@@ -1,4 +1,5 @@
 import React from 'react'
+import './Paginado.css'
 
 const Paginado = ({recipesPerPage, allRecipes, paginado, currentPage}) => {
     const pageNumbers= [];
@@ -12,15 +13,15 @@ const Paginado = ({recipesPerPage, allRecipes, paginado, currentPage}) => {
     }
 
   return (
-    <div>
+    <div className='containerPaginado'>
 
-<button className="flechaspag" onClick={() => paginado(currentPage === 1 ? pageNumbers.length : currentPage - 1)}> 🢀 </button>
+<button className='buttonFlecha' onClick={() => paginado(currentPage === 1 ? pageNumbers.length : currentPage - 1)}> 🢀 </button>
 
 {pageNumbers &&
     pageNumbers.map(number => {
-        return(<button className={`numberpage ${number===currentPage?"paginaactiva":null}`}key={number} onClick={() => paginado(number)}>{currentPage === number ? <b>{number}</b> : number}</button>)
+        return(<button className='buttonFlecha' key={number} onClick={() => paginado(number)}>{currentPage === number ? <b>{number}</b> : number}</button>)
         })}
-<button className="flechaspag" onClick={() => paginado(currentPage === 0 ? pageNumbers.length : currentPage + 1)}> 🢂 </button>
+<button className='buttonFlecha' onClick={() => paginado(currentPage === 0 ? pageNumbers.length : currentPage + 1)}> 🢂 </button>
     </div>
   )
 }

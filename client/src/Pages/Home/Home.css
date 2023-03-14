@@ -11,3 +11,108 @@
 body{
     background-image: url('https://img.freepik.com/foto-gratis/fondo-mesa-madera-vacia-mantel_93675-129997.jpg?w=2000');
 }
+
+.content-select{
+	max-width: 50vw;
+	position: relative;
+    
+    display: flex;
+    margin-left: 25vw;
+    bottom: -1vh;
+    padding: 1vh;
+    
+   
+
+    
+   
+    
+}
+ 
+.content-select select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 1px;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+ 
+.content-select select:hover{
+	background-color:navajowhite;
+}
+ 
+/* 
+Creamos la fecha que aparece a la izquierda del select.
+Realmente este elemento es un cuadrado que sólo tienen
+dos bordes con color y que giramos con transform: rotate(-45deg);
+*/
+.content-select i{
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 13px);
+	width: 100px;
+	height: 16px;
+	display: block;
+	border-left:4px solid #2AC176;
+	border-bottom:4px solid #2AC176;
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+	transition: all 0.25s ease;
+}
+ 
+.content-select:hover i{
+	margin-top: 3px;
+}
+
+
+.buttonReset{
+    
+        width: 9em;
+        height: 3em;
+        border-radius: 20em;
+        font-size: 15px;
+        font-family: inherit;
+        border: 1px;
+        border-color: black;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: 6px 6px 12px #c5c5c5,
+                    -6px -6px 12px #ffffff;
+                    margin-left: 0.5vw;
+       }
+       
+       .buttonReset::before {
+        content: '';
+        width: 0;
+        height: 3em;
+        border-radius: 1em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to right, navajowhite 0%, #f9f047 100%);
+        transition: .5s ease;
+        display: block;
+        z-index: -1;
+        
+       }
+       
+       .buttonReset:hover::before {
+        width: 9em;
+       }
+
+
+
+
+

@@ -5,17 +5,14 @@ import { Link } from 'react-router-dom'
 import Linkedin from '../../Images/linkedink1.png'
 import Instagram from '../../Images/instagram5.jpg'
 import GitHub from '../../Images/github.png'
-import Filters from '../Filters/Filters'
+
 
 import './Navbar.css'
 
 
 const NavBar = ({handleChange, handleSubmit, clearSearch}) => {
 
-
-
-    
-  return (
+return (
 
 <div className='navbar'>
 
@@ -26,7 +23,7 @@ const NavBar = ({handleChange, handleSubmit, clearSearch}) => {
     <form className='search-box' onChange={handleChange}>
     <div className='search'>
     <input  className='search__input' autoComplete='off'  placeholder="Search Recipe..." /> 
-    <button  className='search__button'  type='submit' onClick={handleSubmit}>buscar</button>
+    <button  className='search__button'  type='submit' onClick={handleSubmit}>🔎</button>
     </div>
 
 </form>
@@ -52,9 +49,6 @@ const NavBar = ({handleChange, handleSubmit, clearSearch}) => {
         </Link>
         </div>
 
-        <div>
-            <Filters />
-        </div>
         
 
 

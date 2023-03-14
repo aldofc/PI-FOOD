@@ -2,7 +2,7 @@
     display: flex;
     
     align-items: center;
-    height: 14vh;
+    height: 15vh;
     box-shadow: rgb(0 0 0 / 10%) 0px 2px 3px;
     background-color:tan;
    
@@ -19,8 +19,10 @@
   height: 20px;
 }
 .bajar{
-    display: flex;
-    margin-right: 1vw;
+    
+    position: absolute;
+    right: 1vw;
+   
     padding: 3vh;
     margin-top: 5vh;
 }
@@ -184,7 +186,7 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    margin-left: 10vw;
+    margin-left: 7vw;
   }
   
   .search__input {
@@ -343,13 +345,13 @@
    .buttonCreate{
     display: inline-block;
     margin: 0 10px;
-    margin-right: 25vw;
+    margin-right: 2vw;
    }
 
    .buttonHome{
     display: inline-block;
     margin: 0 10px;
-    margin-right: 5vw;
+    margin-right: 2vw;
    }
    
 

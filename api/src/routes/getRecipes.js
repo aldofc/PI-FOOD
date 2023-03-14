@@ -6,6 +6,7 @@ const router = Router();
 
 
 router.get('/' , async (req,res) => {
+  
     const {name} =req.query;
 
     let allInfo = await getALLRecipes();
@@ -40,6 +41,9 @@ router.get('/' , async (req,res) => {
 //       res.status(404).json({ error });
 //     }
 //   });
+
+
+//--------------------------------------------------------------------------------------------------------------
 
 
 

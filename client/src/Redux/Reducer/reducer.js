@@ -1,13 +1,19 @@
-import { GET_RECIPES } from "../Actions/actions"
-import { GET_RECIPE_BY_ID } from "../Actions/actions"
-import { LOADER } from "../Actions/actions"
-import { FILTER_BY_DIETS } from "../Actions/actions"
+import {
+     GET_RECIPES ,
+     GET_RECIPE_BY_ID, 
+     LOADER,
+     FILTER_BY_DIETS, 
+     SORT_BY_NAME, 
+     SORT_BY_HS,
+    
+} from "../Actions/actions"
 
 
 const initialState = {
     recipes: [],
     recipeByID: {},
     diets: [],
+    
     loader:true,
  }
  
@@ -26,25 +32,62 @@ const initialState = {
                         recipes: result,
                     }
                 }else{
-                    const fil = result.filter(r => r.diets?.some((d) => d===action.payload))
+                    const ff = result.filter(r => r.diets?.some((d) => d === action.payload))
                     return{
                         ...state,
-                        recipes: fil
+                        recipes: ff,
                     }
-                }
+                };
 
-
-
-
-
-
-
-
-
-         case GET_RECIPE_BY_ID: 
+                case SORT_BY_NAME:
+                    let ordenado = action.payload === 'asc' ?
+                    state.recipes.sort(function (a,b) {
+                        if(a.name.toLowerCase() > b.name.toLowerCase()){
+                            return 1;
+                        }
+                        if(b.name.toLowerCase() > a.name.toLowerCase()){
+                            return -1;
+                        }
+                        return 0
+                    }) : state.recipes.sort(function (a,b){
+                        if( a.name.toLowerCase() > b.name.toLowerCase()) {
+                            return -1
+                        }
+                        if(b.name.toLowerCase() > a.name.toLowerCase()) {
+                            return 1
+                        }
+                        return 0
+                    })
+                    return {
+                        ...state,
+                        recipes : ordenado
+                    }
+               case SORT_BY_HS:
+                    let sortedHS = action.payload === "hasc" ?
+                       state.recipes.sort(function(a,b){
+                        if(a.healthscore > b.healthscore) {
+                            return 1;
+                        }
+                        if(b.healthscore > a.healthscore) {
+                            return -1
+                        }
+                        return 0;
+                       }): state.recipes.sort(function(a,b) {
+                        if(a.healthscore > b.healthscore) {
+                            return -1
+                        }
+                        if(b.healthscore > a.healthscore) {
+                            return -1
+                        } return 0;
+                       })
+                       return{
+                        ...state,
+                        recipes: sortedHS
+                       }
+                   case GET_RECIPE_BY_ID: 
              return{
                 ...state,
-                recipeByID: action.payload ,
+                recipeByID: action.payload 
                 }
          case 'GET_RECIPE_BY_NAME':
              return{
@@ -73,6 +116,12 @@ const initialState = {
                             loader: true,
                         }
                     }
+
+                // case FILTER_BY_SOURCE:
+                //     return{
+                //         ...state,
+                //         recipes: [...action.payload]
+                //     }
                  default:
                      return {...state}
 
