@@ -1,9 +1,17 @@
 import React from 'react'
 import './Loader.css'
+import Patrik from '../../Images/patrik.gif'
 
 const Loader = () => {
   return (
-    <div className='loader'><h1>Loading...</h1></div>
+    <div className='container'>
+
+
+    <div>
+      <img className='gif' src={Patrik} alt="gif" />a</div>
+
+
+    </div>
   )
 }
 

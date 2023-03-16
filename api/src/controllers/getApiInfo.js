@@ -18,7 +18,7 @@ const getApiInfo = async () => {
             return{
                 id: e.id,
                 name: e.title,
-                summary: e.summary,
+                summary: e.summary.replaceAll(/<(“[^”]”|'[^’]’|[^'”>])*>/g, ""), //es para quitar etiquetas y simbolos del resumen
                 healthscore: e.healthScore,
                 image: e.image,
                 diets: e.diets,

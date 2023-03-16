@@ -27,29 +27,28 @@ dispatch(Loading())
 if(loader === true && recetas[0] && recetas[0].id == id) {
 
 return (
-    <div>
-      <h2>{recetas[0].name}</h2>
-      <div>
+    <div className='containerDetails'>
+      <h2 className='tittleFont'>{recetas[0].name}</h2>
+      <div className='imgSummary'>
         <img src={recetas[0].image} alt='not found'/>
+      <div className='summaryFont'>
+        <h3 className='summaryTitle'>summary:</h3><p>{recetas[0].summary}</p>
+        </div>
       </div>
 
-      <div>
-        <h4>summary:</h4><p>{recetas[0].summary}</p>
-      </div>
-
-      <div>
-        <div><h5>Health Score:</h5><p>{recetas[0].healthscore}</p></div>
-        <div><h5>Type Diet</h5><p></p>{recetas[0].diets}</div>
-        <div><h5>Type Dish</h5><p>{recetas[0].dishtypes}</p></div>
+      <div className='containerhealth'>
+        <div className='fontCarac'><h3>Health Score:</h3><p className='fontCaracMini'>{recetas[0].healthscore}</p></div>
+        <div className='fontCarac'><h3>Type Diet</h3><p className='fontCaracMini'>{recetas[0].diets}</p></div>
+        <div className='fontCarac'><h3>Type Dish</h3><p className='fontCaracMini'>{recetas[0].dishtypes}</p></div>
       </div>
 
 
-      <div>
-        <h5>steps</h5>
+      <div className='stepsContainer'>
+        <h4 className='stepsFont'>steps</h4>
         <ol>
           {Array.isArray(recetas[0].steps) ? recetas[0].steps.map(e => {
             return(
-              <li>{e}</li>
+              <li className='stepsFont2'>{e}</li>
             )
           }): <p>not steps</p>}
         </ol>

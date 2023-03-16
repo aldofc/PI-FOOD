@@ -1,6 +1,6 @@
 .containerCreate{
     display: flex;
-    background-image: url('https://img.freepik.com/foto-gratis/fondo-mesa-madera-vacia-mantel_93675-129997.jpg?w=2000');
+    background-image: url('https://saborperuanonj.com/wp-content/uploads/2019/08/web-principal-sabor-peruano.jpg');
     background-size: cover;
     background-attachment: fixed;
     height: auto;
@@ -66,7 +66,7 @@
     padding-bottom: 2.1em;
     border: 2px dashed #DAA06D;
     border-radius: 15px;
-    background-color: #EADDCA;
+    background-color: #fcdfdb;
     box-shadow: 0 0 0 4px #EADDCA, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
     transition: .4s ease-in-out;
   }
@@ -95,7 +95,7 @@
     width: 14em;
     height: 3em;
     border-radius: 10px;
-    background-color: #EADDCA;
+    background-color: #f3f3f3;
     text-align: center;
     margin-bottom: 10px;
     

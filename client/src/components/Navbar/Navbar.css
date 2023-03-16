@@ -4,7 +4,8 @@
     align-items: center;
     height: 15vh;
     box-shadow: rgb(0 0 0 / 10%) 0px 2px 3px;
-    background-color:tan;
+    /* background-color:#3b3446; */
+    background-color:#3b3446;
    
 }
 .logos{
@@ -161,7 +162,7 @@
     bottom: 0;
     opacity: 0;
     content: '';
-    background-color: goldenrod;
+    background-color: #3b3446;
     z-index: -1;
    }
    
@@ -266,7 +267,7 @@
     bottom: 0;
     opacity: 0;
     content: '';
-    background-color: #DAA06D;
+    background-color: #3b3446;
     z-index: -1;
    }
    
@@ -321,7 +322,7 @@
     bottom: 0;
     opacity: 0;
     content: '';
-    background-color: #DAA06D;
+    background-color: #3b3446;
     z-index: -1;
    }
    

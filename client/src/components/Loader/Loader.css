@@ -1,3 +1,10 @@
-
+.container{
+   position: absolute;
+   
+}
     
+.gif{
+    width: 100vw;
+    height: 100vh;
+}
     
