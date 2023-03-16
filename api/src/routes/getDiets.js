@@ -2,27 +2,26 @@ const { Router } = require('express');
 const { TypeDiet } = require('../db');
 const router = Router();
 
-router.get('/' , async (req,res) => {
+router.get("/" , async (req,res) => {
     let types = [ //Obtiene un arreglo con todos los tipos de dietas existentes.
-        'Gluten Free',
-        'Ketogenic',
-        'Vegetarian',
-        'Lacto-Vegetarian',
-        'Ovo-Vegetarian',
-        'Vegan',
-        'Pescetarian',
-        'Paleo',
-        'Primal',
-        'Low FODMAP',
-        'Whole30'
+    "gluten free",
+    "dairy free",
+    "paleolithic",
+    "lacto ovo vegetarian",
+    "primal",
+    "whole 30",
+    "fodmap friendly",
+    "ketogenic",
+    "pescatarian",
+    "vegan"
     ]
     types.forEach(async (e)=>{
         await TypeDiet.findOrCreate({
-            where:{name:e}
+            where:{ name: e }
         })
     })
-    let results = await TypeDiet.findAll()
-        return res.send(results)
+    let result = await TypeDiet.findAll()
+        return res.send(result)
     
 })
 module.exports = router;

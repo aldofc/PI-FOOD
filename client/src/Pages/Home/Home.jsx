@@ -56,6 +56,7 @@ function handleCLick(e) {
   dispatch(getRecipes());
   dispatch(filterByDiets(e.target.value))
   
+  
 }
 function handleSortName(e){
   e.preventDefault();

@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
     },
     healthscore: {//puntuacion
     type: DataTypes.INTEGER,
-    allowNull: false,
+    
   },
 
   image: { //imagen
@@ -32,7 +32,7 @@ module.exports = (sequelize) => {
 
   steps: { //pasos
     type:DataTypes.ARRAY(DataTypes.STRING),
-    allowNull: false 
+    
   },
 
   dishtypes: { //platos

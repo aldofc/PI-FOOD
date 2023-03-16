@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {getDiets, postRecipes} from '../../Redux/Actions/actions'
 import {useHistory} from 'react-router-dom'
 import {useDispatch , useSelector} from 'react-redux'
+import NavBar from '../../components/Navbar/Navbar'
 
 
 import './Create.css'
@@ -136,6 +137,12 @@ function handleSubmit(e) {
 
 
 return (
+
+  <div>
+
+    <NavBar />
+
+
     <div className='containerCreate'>
 
      
@@ -210,6 +217,7 @@ return (
 
 
     </form>
+    </div>
     </div>
     </div>
   )

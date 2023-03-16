@@ -5,6 +5,7 @@ import {
      FILTER_BY_DIETS, 
      SORT_BY_NAME, 
      SORT_BY_HS,
+     GET_DIETS,
     
 } from "../Actions/actions"
 
@@ -98,7 +99,7 @@ const initialState = {
              return{
                 ...state
              }
-         case 'GET_DIETS':
+         case GET_DIETS:
              return{
                 ...state,
                  diets: action.payload

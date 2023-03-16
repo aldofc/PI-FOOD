@@ -2,6 +2,7 @@ require('dotenv').config();
 const axios =require('axios')
 const { API_KEY } = process.env;
 
+
 //url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`;
 // apimokeada ----    url: "https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5",
 
@@ -18,10 +19,10 @@ const getApiInfo = async () => {
                 id: e.id,
                 name: e.title,
                 summary: e.summary,
-                healthscore: e.healthscore,
+                healthscore: e.healthScore,
                 image: e.image,
                 diets: e.diets,
-                dishtypes: e.dishtypes,
+                dishtypes: e.dishTypes,
                 steps: e.analyzedInstructions[0]?.steps.map(e => {
                     return (e.step)
                 })
@@ -29,12 +30,13 @@ const getApiInfo = async () => {
         })
 
         return apiInfo;
+        
     }catch(error){
         return error
     }
-
 }
 
 module.exports={
     getApiInfo
+    
 }
