@@ -23,6 +23,7 @@ function Create() {
       healthscore: '',
   })
   const [input, setInput] = useState({
+      id:'',
       name: '',
       summary: '',
       image: '',
@@ -60,6 +61,7 @@ function validate(input){
   }if(input.dishtypes === ''){
     errors.dishtypes='dish type required'
   }
+  
   return errors
 }
 
@@ -82,6 +84,12 @@ function handleSubmit(e) {
   if(input.healthscore >100 || input.healthscore <0) {
     return alert('Health score must be between 0 and 100')
   }
+
+  if(input.dishtypes === '') {
+    return alert('please place a type of dish')
+  }
+
+  
 
   dispatch(postRecipes(input))
   alert('the recipe was created')
@@ -149,7 +157,10 @@ return (
      <div className='conainerForm'>
     <form  className='form' onSubmit={e => handleSubmit(e)}>
     <p className='heading'>CREATE RECIPE</p>
+
+
      <div className='inputs'>
+      
       <div>
       <label className='heading2' >Name :</label>
       <input className='input'  autoComplete='off' type="text" value={input.name} name='name' onChange={handleChange}/>

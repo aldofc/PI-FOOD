@@ -24,8 +24,8 @@ dispatch(Loading())
 
 
 
-if(loader === true && recetas[0] && recetas[0].id == id) {
-
+if(loader === true && recetas[0] && recetas[0].id == id) { //fucnionaba pero nos bada en la posicion 0 y por eso no me mostraba la info
+                                                            //agregamos un condicional if para que nos tome en la posicion 0 
 return (
     <div className='containerDetails'>
       <h2 className='tittleFont'>{recetas[0].name}</h2>
@@ -37,6 +37,7 @@ return (
       </div>
 
       <div className='containerhealth'>
+        <div className='fontCarac'><h3>Id:</h3><p>{recetas[0].id}</p></div>
         <div className='fontCarac'><h3>Health Score:</h3><p className='fontCaracMini'>{recetas[0].healthscore}</p></div>
         <div className='fontCarac'><h3>Type Diet</h3><p className='fontCaracMini'>{recetas[0].diets}</p></div>
         <div className='fontCarac'><h3>Type Dish</h3><p className='fontCaracMini'>{recetas[0].dishtypes}</p></div>

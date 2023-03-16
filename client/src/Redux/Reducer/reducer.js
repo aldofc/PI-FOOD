@@ -6,6 +6,7 @@ import {
      SORT_BY_NAME, 
      SORT_BY_HS,
      GET_DIETS,
+     DATA_OR_API,
     
 } from "../Actions/actions"
 
@@ -14,6 +15,7 @@ const initialState = {
     recipes: [],
     recipeByID: {},
     diets: [],
+    dataOrApi: [],
     
     loader:true,
  }
@@ -23,8 +25,9 @@ const initialState = {
          case GET_RECIPES:
              return{
                 ...state,
-                recipes: action.payload
-             }
+                recipes: action.payload,
+                dataOrApi: action.payload,
+             };
             case FILTER_BY_DIETS:
                 const result = state.recipes;
                 if(action.payload === 'all'){
@@ -118,11 +121,18 @@ const initialState = {
                         }
                     }
 
-                // case FILTER_BY_SOURCE:
-                //     return{
-                //         ...state,
-                //         recipes: [...action.payload]
-                //     }
+                    case DATA_OR_API:
+                        let all2 = [...state.dataOrApi];
+                        let dataFilter = all2.filter(r => r.create === true);
+                        let apiFilter = all2.filter(r => r.create === false);
+
+                        let sortRecipes = action.payload === "data" ? dataFilter:
+                                       action.payload === "api" ? apiFilter:
+                                       all2;
+                        return{
+                            ...state,
+                            recipes: sortRecipes
+                        };
                  default:
                      return {...state}
 

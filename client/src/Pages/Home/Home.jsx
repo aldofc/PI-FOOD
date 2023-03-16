@@ -1,15 +1,15 @@
 import React from 'react'
 import {  useEffect } from 'react'
 import { useDispatch} from 'react-redux'
-import {  getDiets, getRecipeByName, getRecipes } from '../../Redux/Actions/actions.js'
+import {  getDiets, getRecipeByName, getRecipes , Loading, sortApiOrData } from '../../Redux/Actions/actions.js'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import Card from '../../components/Card/Card.jsx'
 import NavBar from '../../components/Navbar/Navbar.jsx'
 import { filterByDiets , orderByName , orderByHS } from '../../Redux/Actions/actions'
 import Paginado from '../../components/Paginado/Paginado'
+import Loader from '../../components/Loader/Loader'
 // import { filterRecipeBySourse } from '../../Redux/Actions/actions.js'
-
 import './Home.css'
 
 const Home = () => {
@@ -17,7 +17,8 @@ const Home = () => {
   const dispatch = useDispatch();
   const allRecipes = useSelector(state=>state.recipes)
   const diets = useSelector(state => state.diets)
-  //const allRecipes = useSelector((state) => state.recipes)
+  const loader = useSelector(state => state.loader)
+  const origin = useSelector(state => state.dataOrApi)
   
   const [orden, setOrden] = useState('')
   const [searchString, setSearchString] = useState("");
@@ -32,9 +33,11 @@ const Home = () => {
     setCurrentPage(pageNumber)
   }
 
-  useEffect(()=>{
-  dispatch(getRecipes());
+  useEffect(async()=>{   // sin el async y await no carga el loader
+    dispatch(Loading()) 
+  await dispatch(getRecipes());
   dispatch(getDiets())
+   dispatch(Loading())
   },[dispatch])
 
 function handleChange(e){
@@ -48,13 +51,17 @@ function handleSubmit(e){
 }
 
 function handleCLick(e) {
+
   e.preventDefault()
+  dispatch(Loading())
   dispatch(getRecipes())
+  dispatch(Loading())
 }
-  function handleFilterDiets(e){
+  async function handleFilterDiets(e){ //no funcionaba el filtro bien y probando con async await funciona correctamente
   e.preventDefault();
-  dispatch(getRecipes());
+  await dispatch(getRecipes());
   dispatch(filterByDiets(e.target.value))
+  setCurrentPage(1)
   
   
 }
@@ -68,16 +75,24 @@ function handleSortHS(e) {
   e.preventDefault();
   dispatch(orderByHS(e.target.value))
   setOrden(`Ordenado ${e.target.value}`)
-  
 }
 
+function handleDataOrApi(e){
+  e.preventDefault();
+  const select = e.target.value;
+
+ dispatch(sortApiOrData(select))
+
+ setCurrentPage(1);
+ setOrden(`Ordenado ${select}`)
+}
 
 // const filterBySourse = e => {
 //   e.preventDefault()
 //   dispatch(filterRecipeBySourse(e.target.value))
 
 // }
-
+if(loader===true){ 
 return (
     <div>
     <div>
@@ -94,9 +109,6 @@ return (
        <option value='desc'> Z-A </option>
     </select>
     
-
-   
-
     <select onChange={e => handleFilterDiets(e)}>
        <option value='filtrado'> ALL TYPE OF DIET </option>
         {diets?.map((e) => {
@@ -106,13 +118,17 @@ return (
          })}
    </select>
   
-
-   
-
-    <select onChange={e => handleSortHS(e)}>
+   <select  onChange={e => handleSortHS(e)}>
        <option value=""> ORDER BY HEALTHSCORE </option>
        <option value="hasc">HIGH HS</option>
        <option value="hdesc">LOW HS</option>
+    </select>
+
+    <select onChange={e => handleDataOrApi(e)}>
+      <option value=""> DataOrApi </option>
+      <option value='all'> all </option>
+      <option value="data">Data</option>
+      <option value="api">Api</option>
     </select>
 
     <button className='buttonReset' onClick={e => { handleCLick(e) }}>
@@ -129,14 +145,7 @@ return (
 
     </div>
     
-    
-
-    
-
-
-
-       
-       <div className='card-container'>
+     <div className='card-container'>
            {currentRecipes?.map(recipe=>{
            return(   
             <Card id={recipe.id} 
@@ -155,12 +164,14 @@ return (
     allRecipes={allRecipes.length}
     paginado={paginado} />
     
-
-
-
-    </div>
+</div>
     
   )
+}else{
+  return(
+    <Loader />
+  )
+}
 }
 
 export default Home

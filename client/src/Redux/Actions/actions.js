@@ -9,6 +9,7 @@ export const FILTER_BY_DIETS = 'FILTER_BY_DIETS'
 export const SORT_BY_NAME = 'SORT_BY_NAME'
 export const SORT_BY_HS = 'SORT_BY_HS'
 export const FILTER_BY_SOURCE = 'FILTER_BY_SOURCE'
+export const DATA_OR_API = 'DATA_OR_API'
 
 
 
@@ -105,6 +106,14 @@ export const clearFilters = diets => {
     return{
         type: 'CLEAR_FILTER',
         payload: diets
+    }
+}
+
+
+export function sortApiOrData(payload){
+    return{
+        type: DATA_OR_API,
+        payload
     }
 }
 
