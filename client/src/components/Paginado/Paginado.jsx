@@ -4,7 +4,7 @@ import './Paginado.css'
 const Paginado = ({recipesPerPage, allRecipes, paginado, currentPage}) => {
     const pageNumbers= [];
 
-    for (let i = 0; i < Math.ceil(allRecipes / recipesPerPage); i++) {
+    for (let i = 0; i < Math.ceil(allRecipes / recipesPerPage); i++) {  //La función Math.ceil() devuelve el entero mayor o igual más próximo a un número dado.
         pageNumbers.push(i+1)
     }
 

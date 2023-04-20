@@ -18,7 +18,7 @@ const Home = () => {
   const allRecipes = useSelector(state=>state.recipes)
   const diets = useSelector(state => state.diets)
   const loader = useSelector(state => state.loader)
-  const origin = useSelector(state => state.dataOrApi)
+  //const origin = useSelector(state => state.dataOrApi)
   
   const [orden, setOrden] = useState('')
   const [searchString, setSearchString] = useState("");
@@ -27,7 +27,9 @@ const Home = () => {
   const recipesPerPage = 9;
   const lastCardIndex = currentPage * recipesPerPage
   const firstCardIndex = lastCardIndex - recipesPerPage
-  const currentRecipes = allRecipes.slice(firstCardIndex, lastCardIndex)
+  const currentRecipes = allRecipes.slice(firstCardIndex, lastCardIndex)  //El método slice() devuelve una copia de una parte del array 
+                                                                          //dentro de un nuevo array empezando por inicio hasta fin 
+                                                                          //(fin no incluido). El array original no se modificará
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber)
@@ -77,11 +79,11 @@ function handleSortHS(e) {
   setOrden(`Ordenado ${e.target.value}`)
 }
 
-function handleDataOrApi(e){
+ function handleDataOrApi(e){
   e.preventDefault();
   const select = e.target.value;
 
- dispatch(sortApiOrData(select))
+dispatch(sortApiOrData(select))
 
  setCurrentPage(1);
  setOrden(`Ordenado ${select}`)
@@ -92,7 +94,7 @@ function handleDataOrApi(e){
 //   dispatch(filterRecipeBySourse(e.target.value))
 
 // }
-if(loader===true){ 
+if(loader==true){ 
 return (
     <div>
     <div>
@@ -120,11 +122,11 @@ return (
   
    <select  onChange={e => handleSortHS(e)}>
        <option value=""> ORDER BY HEALTHSCORE </option>
-       <option value="hasc">HIGH HS</option>
-       <option value="hdesc">LOW HS</option>
+       <option value="hdesc">HIGH HS</option>
+       <option value="hasc">HIGH HS</option>   
     </select>
 
-    <select onChange={e => handleDataOrApi(e)}>
+    <select name='origin' onChange={e => handleDataOrApi(e)}>
       <option value=""> DataOrApi </option>
       <option value='all'> all </option>
       <option value="data">Data</option>

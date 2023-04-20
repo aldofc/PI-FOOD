@@ -10,8 +10,8 @@ function Card ({image, name, diets, id, healthscore}) {
     </Link>
 <div>
       <h3>{name}</h3>
-      <h5>TIPO DE DIETA: {diets.join(',')}</h5>
-      <h5>HEALTH SCORE:{healthscore}</h5>
+      <h5> DIET TYPE : {diets.join(',')}</h5>
+      <h5> HEALTH SCORE :{healthscore}</h5>
 </div>
 </div>
         

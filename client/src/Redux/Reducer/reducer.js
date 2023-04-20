@@ -15,7 +15,7 @@ const initialState = {
     recipes: [],
     recipeByID: {},
     diets: [],
-    dataOrApi: [],
+    origin: [],
     
     loader:true,
  }
@@ -26,7 +26,7 @@ const initialState = {
              return{
                 ...state,
                 recipes: action.payload,
-                dataOrApi: action.payload,
+                origin: action.payload,
              };
             case FILTER_BY_DIETS:
                 const result = state.recipes;
@@ -122,16 +122,16 @@ const initialState = {
                     }
 
                     case DATA_OR_API:
-                        let all2 = [...state.dataOrApi];
-                        let dataFilter = all2.filter(r => r.create === true);
-                        let apiFilter = all2.filter(r => r.create === false);
+                        let all = [...state.origin];
+                        let dataFilter = all.filter(r => r.create === true);
+                        let apiFilter = all.filter(r => r.create === false);
 
                         let sortRecipes = action.payload === "data" ? dataFilter:
                                        action.payload === "api" ? apiFilter:
-                                       all2;
+                                       all;
                         return{
                             ...state,
-                            recipes: sortRecipes
+                            recipes: sortRecipes,
                         };
                  default:
                      return {...state}

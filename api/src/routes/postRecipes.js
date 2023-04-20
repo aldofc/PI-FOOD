@@ -8,7 +8,7 @@ router.post('/' ,  async (req,res) => {
     let{ diets,image,name,summary,healthscore,steps, dishtypes }= req.body
 
     try{
-        let createRecipe = await  Recipe.create({
+        let createRecipe = await Recipe.create({
             name,
             summary,
             healthscore,

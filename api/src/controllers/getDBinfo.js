@@ -4,7 +4,7 @@ const { Recipe , TypeDiet } = require('../db')
 
 const getDBinfo = async () => {
     try{
-        const recipes = await Recipe.findAll({
+        const recipes = await Recipe.findAll({ //devuelve un array que contiene todos los elementos que terminan en diccionario de sinonimos
             include: {
                 model: TypeDiet,
                 attributes: ['name'],

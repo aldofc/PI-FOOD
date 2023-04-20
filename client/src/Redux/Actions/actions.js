@@ -12,14 +12,11 @@ export const FILTER_BY_SOURCE = 'FILTER_BY_SOURCE'
 export const DATA_OR_API = 'DATA_OR_API'
 
 
-
-
-
 export function getRecipes(){
     return async function(dispatch){
         const response = await axios.get('http://localhost:3001/recipes',{})
         return dispatch({
-            type: GET_RECIPES,
+            type : GET_RECIPES,
             payload: response.data
         })
     }

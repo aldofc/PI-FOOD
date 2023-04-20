@@ -30,8 +30,8 @@ module.exports = (sequelize) => {
     allowNull : false
   },
 
-  steps: { //pasos
-    type:DataTypes.ARRAY(DataTypes.STRING),
+  steps: { //pasos                         .ARRAY    tipo de valores de array
+    type:DataTypes.ARRAY(DataTypes.STRING), //DataTypes.ARRAY is not available on Mysql, it's only available on postgres.
     
   },
 

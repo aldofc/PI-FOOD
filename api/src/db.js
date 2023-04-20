@@ -34,7 +34,7 @@ const { Recipe , TypeDiet } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-Recipe.belongsToMany(TypeDiet, { through: 'recipeTypediet'});
+Recipe.belongsToMany(TypeDiet, { through: 'recipeTypediet'}); //belongsToMany Asociación de muchos a muchos con una tabla de combinación.
 TypeDiet.belongsToMany(Recipe, { through: 'recipeTypediet'});
 
 module.exports = {
